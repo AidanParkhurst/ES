@@ -1,0 +1,1 @@
+need this for github pages with svelte, because it prepends underscores on file names, and jekyll doesn't like loading files in that format.
