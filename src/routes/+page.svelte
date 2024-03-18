@@ -37,6 +37,8 @@
     } else {
         spotAngle = (angle+90);
     }
+    
+    export const prerender = true;
 </script>
 
 <div class="back">
