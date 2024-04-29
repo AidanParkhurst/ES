@@ -162,6 +162,7 @@
         top: 0;
         left: 0;
         pointer-events: none;
+        touch-action: none;
     }
     .spot {
         position: fixed;
@@ -204,6 +205,7 @@
     }
     a {
         pointer-events: auto;
+        touch-action: auto;
         padding: 10px 20px;
         background-color: #022840;
         border: 2px solid #022840;
@@ -239,6 +241,7 @@
 
     .video {
         pointer-events: auto;
+        touch-action: auto;
         border-radius: 20px;
         border: none;
         width: auto;
