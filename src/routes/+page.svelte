@@ -4,7 +4,7 @@
 
     let contents;
     let scrolled = 0;
-    
+    let vlogLink = "https://streamable.com/e/9vu1sr?";    
     // Rotate the light beams based on the scroll position
     $: angle = scrolled / 10;
     $: screen = Math.floor(angle / 180);
@@ -49,6 +49,8 @@
         <h1 class="title">Ensayo Personal (cont.)</h1>
     {:else if (450 < angle) && (angle < 630)}
         <h1 class="title">Algo bobo</h1>
+    {:else}
+        <h1 class="title">Intereses</h1>
     {/if}
     <img class="lighthouse left" src={LightHouse} style="z-index: {leftZ}" alt="Lighthouse">
     <img class="lighthouse right" src={LightHouse} style="z-index: {rightZ}"alt="Lighthouse">
@@ -56,7 +58,7 @@
 </div>
 <div class="scrollable" bind:this={contents}
                         on:scroll={()=>scrolled=contents.scrollTop} >
-    <div class="filler" style="min-height: 1000%">
+    <div class="filler" style="min-height: 1510%">
     </div>
 </div>
 <div class="contents">
@@ -64,7 +66,7 @@
         <div class="content">
             {#if screen==0}
                 <h1>¡Bienvenidos a mi sitio!</h1>
-                <p>Soy Aidan Parkhurst, estudiante, programador, y artist.</p>
+                <p>Soy Aidan Parkhurst, estudiante, programador, y artista.</p>
                 <p>Sigue desplazerse para aprender todo que pueda desear saber de mi</p>
                 <p>Empezando con un ensayo personal</p>
             {:else if screen==1}
@@ -78,8 +80,9 @@
                 <h1 style="margin-bottom: 10px;">No debo tomarme tan serio, aqui es una presentación más simple de mis intereses:</h1>
                 <img class="arte" src={Autoretrrato} alt="Autoretrrato de mi" width="33%">
                 <p class="essay">Contiene yo, en el bosque de las latas de Arizona té verde, porque me gustan mucho esas bebidas, y estoy muy enojado que cuestan $1.59 ahora en CityCo. Estoy mirando a mi gato, Mister. Él está brillante porque es la luz de mi vida, y me encanta su barriga. También, él duerme en una cama de Minecraft, porque yo juego muchos videojuegos, y Minecraft es un clásico. Finalmente, hay un patinador haciendo un truco chulo desde mi cabeza, porque pienso el monopatín es divertido.</p>
-            <!--
-            {:else if screen==3}
+            {:else if screen==4}
+            <iframe allow="fullscreen" allowfullscreen class="video" src="https://streamable.com/e/9vu1sr?"></iframe>
+            {:else if screen==5}
                 <h1>Me apasionan los videojuegos</h1>
                 <p>
                     Me parece un tipo de arte nuevo y podereso. 
@@ -88,7 +91,6 @@
                 </p>
                 <a target="_blank" href='https://rkhur.st/Wave'>Jugar Wave</a>
                 <a target="_blank" href='https://rkhur.st/Communion'>Jugar Communion</a>
-            -->
             {/if}
         </div>
     </div>
@@ -233,6 +235,14 @@
             border-right: 62vw solid #F2D750;
             border-left: 62vw solid #F2D750;
         }
+    }
+
+    .video {
+        pointer-events: auto;
+        border-radius: 20px;
+        border: none;
+        width: auto;
+        height: 80%;
     }
 
 </style>
